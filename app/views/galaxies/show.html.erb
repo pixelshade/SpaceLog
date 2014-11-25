@@ -1,0 +1,51 @@
+<div class="container">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @galaxy.name %>
+</p>
+
+<p>
+  <strong>Info:</strong>
+  <%= @galaxy.info %>
+</p>
+
+<p>
+  <strong>Size:</strong>
+  <%= @galaxy.size %>
+</p>
+
+<p>
+  <strong>Rotx:</strong>
+  <%= @galaxy.rotX %>
+</p>
+
+<p>
+  <strong>Roty:</strong>
+  <%= @galaxy.rotY %>
+</p>
+
+<p>
+  <strong>Rotz:</strong>
+  <%= @galaxy.rotZ %>
+</p>
+
+<p>
+  <strong>Posx:</strong>
+  <%= @galaxy.posX %>
+</p>
+
+<p>
+  <strong>Posy:</strong>
+  <%= @galaxy.posY %>
+</p>
+
+<p>
+  <strong>Posz:</strong>
+  <%= @galaxy.posZ %>
+</p>
+
+<%= link_to 'Edit', edit_galaxy_path(@galaxy) %> |
+<%= link_to 'Back', galaxies_path %>
+</div>

@@ -1,0 +1,47 @@
+<div class="container">
+<div class="row">
+
+<h1>Listing planetary systems</h1>
+  <%= link_to 'New Planetary system', new_planetary_system_path, :class => "btn btn-success btn-sm pull-right" %>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Info</th>
+      <th>Size</th>
+      <th>Posx</th>
+      <th>Posy</th>
+      <th>Posz</th>
+      <th>Rotx</th>
+      <th>Roty</th>
+      <th>Rotz</th>
+      <th>Galaxy</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @planetary_systems.each do |planetary_system| %>
+      <tr>
+        <td><%= planetary_system.name %></td>
+        <td><%= planetary_system.info %></td>
+        <td><%= planetary_system.size %></td>
+        <td><%= planetary_system.posX %></td>
+        <td><%= planetary_system.posY %></td>
+        <td><%= planetary_system.posZ %></td>
+        <td><%= planetary_system.rotX %></td>
+        <td><%= planetary_system.rotY %></td>
+        <td><%= planetary_system.rotZ %></td>
+        <td><%= planetary_system.galaxy.name %></td>
+        <td><%= link_to 'Show', planetary_system %></td>
+        <td><%= link_to 'Edit', edit_planetary_system_path(planetary_system) %></td>
+        <td><%= link_to 'Destroy', planetary_system, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Planetary system', new_planetary_system_path, :class => "btn btn-success btn-sm" %>
+</div></div>

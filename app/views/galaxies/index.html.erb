@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="row">
+    <h1>Listing galaxies</h1>
+
+    <%= link_to 'New Galaxy', new_galaxy_path, class: 'btn btn-success btn-xs pull-right' %>
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th>Name</th>
+        <th>Info</th>
+        <th>Size</th>
+        <th>Rotx</th>
+        <th>Roty</th>
+        <th>Rotz</th>
+        <th>Posx</th>
+        <th>Posy</th>
+        <th>Posz</th>
+        <th colspan="3"></th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <% @galaxies.each do |galaxy| %>
+          <tr>
+            <td><%= galaxy.name %></td>
+            <td><%= galaxy.info %></td>
+            <td><%= galaxy.size %></td>
+            <td><%= galaxy.rotX %></td>
+            <td><%= galaxy.rotY %></td>
+            <td><%= galaxy.rotZ %></td>
+            <td><%= galaxy.posX %></td>
+            <td><%= galaxy.posY %></td>
+            <td><%= galaxy.posZ %></td>
+            <td><%= link_to 'Show', galaxy, class: 'btn btn-info btn-xs', role: 'button' %></td>
+            <td><%= link_to 'Edit', edit_galaxy_path(galaxy), class: 'btn btn-warning btn-xs' %></td>
+            <td><%= link_to 'Destroy', galaxy, method: :delete, class: 'btn btn-danger btn-xs', data: {confirm: 'Are you sure?'} %></td>
+
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
+
+    <br>
+    <%= link_to 'New Galaxy', new_galaxy_path, class: 'btn btn-success btn-xs' %>
+
+  </div>
+
+
+</div>

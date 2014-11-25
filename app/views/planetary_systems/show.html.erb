@@ -1,0 +1,55 @@
+<div class="container"><p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @planetary_system.name %>
+</p>
+
+<p>
+  <strong>Info:</strong>
+  <%= @planetary_system.info %>
+</p>
+
+<p>
+  <strong>Size:</strong>
+  <%= @planetary_system.size %>
+</p>
+
+<p>
+  <strong>Posx:</strong>
+  <%= @planetary_system.posX %>
+</p>
+
+<p>
+  <strong>Posy:</strong>
+  <%= @planetary_system.posY %>
+</p>
+
+<p>
+  <strong>Posz:</strong>
+  <%= @planetary_system.posZ %>
+</p>
+
+<p>
+  <strong>Rotx:</strong>
+  <%= @planetary_system.rotX %>
+</p>
+
+<p>
+  <strong>Roty:</strong>
+  <%= @planetary_system.rotY %>
+</p>
+
+<p>
+  <strong>Rotz:</strong>
+  <%= @planetary_system.rotZ %>
+</p>
+
+<p>
+  <strong>Galaxy:</strong>
+  <%= @planetary_system.galaxy.name %>
+</p>
+
+<%= link_to 'Edit', edit_planetary_system_path(@planetary_system) %> |
+<%= link_to 'Back', planetary_systems_path %>
+</div>

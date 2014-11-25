@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  info: MyText
+  size: 1.5
+  posX: 1
+  posY: 1
+  posZ: 1
+  rotX: 1
+  rotY: 1
+  rotZ: 1
+  galaxy_id: 
+
+two:
+  name: MyString
+  info: MyText
+  size: 1.5
+  posX: 1
+  posY: 1
+  posZ: 1
+  rotX: 1
+  rotY: 1
+  rotZ: 1
+  galaxy_id: 
