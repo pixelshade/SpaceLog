@@ -1,6 +1,6 @@
 class PlanetarySystemsController < ApplicationController
   before_action :set_planetary_system, only: [:show, :edit, :update, :destroy]
-  before_action :get_galaxies, only: [:new, :edit]
+  before_action :get_galaxies, only: [:new, :update, :edit]
 
   # GET /planetary_systems
   # GET /planetary_systems.json

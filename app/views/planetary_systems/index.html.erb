@@ -32,7 +32,7 @@
         <td><%= planetary_system.rotX %></td>
         <td><%= planetary_system.rotY %></td>
         <td><%= planetary_system.rotZ %></td>
-        <td><%= planetary_system.galaxy.name %></td>
+        <td><%= planetary_system.galaxy.name if planetary_system.galaxy %></td>
         <td><%= link_to 'Show', planetary_system %></td>
         <td><%= link_to 'Edit', edit_planetary_system_path(planetary_system) %></td>
         <td><%= link_to 'Destroy', planetary_system, method: :delete, data: { confirm: 'Are you sure?' } %></td>
