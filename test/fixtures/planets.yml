@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  info: MyText
+  scale: 1.5
+  rotX: 1
+  rotY: 1
+  rotZ: 1
+  posX: 1
+  posY: 1
+  posZ: 1
+  planetarySystem: MyString
+  references: MyString
+
+two:
+  name: MyString
+  info: MyText
+  scale: 1.5
+  rotX: 1
+  rotY: 1
+  rotZ: 1
+  posX: 1
+  posY: 1
+  posZ: 1
+  planetarySystem: MyString
+  references: MyString

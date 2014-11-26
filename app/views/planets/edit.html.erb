@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+      <%= render 'layouts/object_viewer' %>
+    </div>
+
+    <div class="col-sm-6">
+      <h1>Editing planet</h1>
+
+      <%= render 'form' %>
+
+      <%= link_to 'Show', @planet %> |
+      <%= link_to 'Back', planets_path %>
+    </div>
+  </div>
+</div>

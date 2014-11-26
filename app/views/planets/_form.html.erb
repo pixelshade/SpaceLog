@@ -1,0 +1,59 @@
+<%= form_for(@planet) do |f| %>
+    <% if @planet.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@planet.errors.count, "error") %> prohibited this planet from being saved:</h2>
+
+          <ul>
+      <% @planet.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+        </div>
+    <% end %>
+
+    <div class="form-group">
+      <%= f.label :name %><br>
+      <%= f.text_field :name, :class => 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :planetary_system %><br>
+      <%= f.collection_select(:planetary_system_id, @planetary_systems, :id, :name, {}, {:class => 'form-control'}) %>
+    </div>
+
+    <div class="form-group">
+    <%= f.label :info %><br>
+    <%= f.text_area :info, :class => 'form-control' %>
+  </div>
+    <div class="form-group">
+    <%= f.label :size %><br>
+    <%= f.text_field :size, :class => 'form-control' %>
+  </div>
+    <div class="form-group">
+    <%= f.label :rotX %><br>
+    <%= f.number_field :rotX, :class => 'form-control' %>
+  </div>
+    <div class="form-group">
+    <%= f.label :rotY %><br>
+    <%= f.number_field :rotY, :class => 'form-control' %>
+  </div>
+    <div class="form-group">
+    <%= f.label :rotZ %><br>
+    <%= f.number_field :rotZ, :class => 'form-control' %>
+  </div>
+    <div class="form-group">
+    <%= f.label :posX %><br>
+    <%= f.number_field :posX, :class => 'form-control' %>
+  </div>
+    <div class="form-group">
+    <%= f.label :posY %><br>
+    <%= f.number_field :posY, :class => 'form-control' %>
+  </div>
+    <div class="form-group">
+    <%= f.label :posZ %><br>
+    <%= f.number_field :posZ, :class => 'form-control' %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

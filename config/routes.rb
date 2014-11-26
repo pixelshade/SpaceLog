@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :planets
+
   resources :planetary_systems
 
   resources :galaxies
