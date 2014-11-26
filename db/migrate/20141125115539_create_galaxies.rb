@@ -3,7 +3,7 @@ class CreateGalaxies < ActiveRecord::Migration
     create_table :galaxies do |t|
       t.string :name
       t.text :info
-      t.integer :size
+      t.float :size
       t.integer :rotX
       t.integer :rotY
       t.integer :rotZ
