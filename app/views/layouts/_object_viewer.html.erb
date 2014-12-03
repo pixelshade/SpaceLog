@@ -1,3 +1,4 @@
 <div id="objectViewer">
-<script>var objectToShow = <%= raw(@objectToShow.to_json) %>;</script>
+
+<script>var objectToShow = <%= raw(@objectToShow.to_json(:methods => [:texture_url])) %>;</script>
 </div>

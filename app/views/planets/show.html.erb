@@ -20,6 +20,7 @@
         <%= @planet.info %>
       </p>
 
+      <%= image_tag @planet.texture.url(:medium) %>
       <p>
         <strong>Size:</strong>
         <%= @planet.size %>
@@ -54,6 +55,7 @@
         <strong>Posz:</strong>
         <%= @planet.posZ %>
       </p>
+
 
 
       <%= link_to 'Edit', edit_planet_path(@planet) %> |

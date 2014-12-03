@@ -1,0 +1,14 @@
+<div id="system_viewer">
+
+  <script>var planetary_system = <%= raw(@planetary_system.to_json()) %>;</script>
+  <script>var planets = <%= raw(@planetary_system.planets.to_json(:methods => [:texture_url])) %>;</script>
+</div>
+
+
+<div id="objectInfo" class="popover top">
+  <div class="arrow"></div>
+  <h3 id="objectInfoTitle" class="popover-title">Object name</h3>
+  <div id="objectInfoContent" class="popover-content">
+   Info :)
+  </div>
+</div>

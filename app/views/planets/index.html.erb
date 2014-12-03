@@ -21,7 +21,7 @@
   <tbody>
     <% @planets.each do |planet| %>
       <tr>
-        <td><%= planet.name %></td>
+        <td><%= link_to planet.name, planet %></td>
         <td><%= planet.info %></td>
         <td><%= planet.size %></td>
         <td><%= planet.rotX %></td>
@@ -31,7 +31,7 @@
         <td><%= planet.posY %></td>
         <td><%= planet.posZ %></td>
         <td><%= planet.planetary_system.name if planet.planetary_system %></td>
-        <td><%= link_to 'Show', planet %></td>
+        <td><%= link_to 'Shows', planet %></td>
         <td><%= link_to 'Edit', edit_planet_path(planet) %></td>
         <td><%= link_to 'Destroy', planet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

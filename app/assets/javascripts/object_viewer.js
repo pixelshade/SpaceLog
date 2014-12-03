@@ -4,7 +4,7 @@
 $(document).on('ready page:load', function () {
     a = $("#objectViewer");
     if (a.length) {
-        if(objectToShow!=null) {
+        if(objectToShow!== undefined && objectToShow!=null) {
             displayObject(a, objectToShow);
             console.log('kreslim');
         }
@@ -24,13 +24,13 @@ function displayObject(canvas, obj) {
 
 
 
-    var controls = new THREE.TrackballControls(camera);
+    var controls = new THREE.TrackballControls(camera, renderer.domElement);
     canvas.append(renderer.domElement);
     camera.position.z = 5;
 
     var geometry = new THREE.SphereGeometry(obj.size /10 ,32, 32);
     var material = new THREE.MeshLambertMaterial({
-        map: THREE.ImageUtils.loadTexture('/assets/planet_gr.jpg')
+        map: THREE.ImageUtils.loadTexture(obj.texture_url)
 //        bumpMap: THREE.ImageUtils.loadTexture('/assets/elev_bump_4k.jpg'),
 //        bumpScale:   0.005,
 //        specularMap: THREE.ImageUtils.loadTexture('/assets/water_4k.png'),
@@ -41,15 +41,6 @@ function displayObject(canvas, obj) {
     var sphere = new THREE.Mesh(geometry, material);
 
     scene.add(sphere);
-
-
-
-
-
-
-
-
-
 
     var addLight = function(){
         scene.add(new THREE.AmbientLight(0x404040));
@@ -77,10 +68,11 @@ function displayObject(canvas, obj) {
 
     render();
 
+
     function render() {
         controls.update();
         sphere.rotation.y += 0.005;
-        requestAnimationFrame(render);
+        requestAnimationFrame(render, canvas);
         renderer.render(scene, camera);
     }
 
