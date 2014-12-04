@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141201003423) do
+ActiveRecord::Schema.define(version: 20141204003237) do
 
   create_table "galaxies", force: true do |t|
     t.string   "name"
@@ -64,5 +64,21 @@ ActiveRecord::Schema.define(version: 20141201003423) do
   end
 
   add_index "planets", ["planetary_system_id"], name: "index_planets_on_planetary_system_id"
+
+  create_table "ratings", force: true do |t|
+    t.integer  "story_id"
+    t.integer  "score",      default: 0
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "ratings", ["story_id"], name: "index_ratings_on_story_id"
+
+  create_table "stories", force: true do |t|
+    t.string   "name"
+    t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

@@ -14,7 +14,14 @@ gem 'coffee-rails', '~> 4.0.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
 
-gem "paperclip", "~> 4.2"
+gem 'paperclip', '~> 4.2'
+
+gem 'tinymce-rails'
+
+# fb authentication
+# gem 'omniauth-facebook', '~> 2.0.0'
+
+# gem 'devise'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

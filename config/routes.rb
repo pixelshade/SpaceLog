@@ -1,9 +1,15 @@
 Rails.application.routes.draw do
+  get 'rating/update'
+
+  resources :stories
+
   resources :planets
 
   resources :planetary_systems
 
   resources :galaxies
+
+  resources :ratings, only: :update
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
