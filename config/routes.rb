@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'rating/update'
+  # get 'rating/update'
 
   resources :stories
 

@@ -11,8 +11,16 @@ class StoriesController < ApplicationController
   # GET /stories/1
   # GET /stories/1.json
   def show
+    @current_user = current_user;
+    if current_user == nil
+      @rating = nil
+    else
+      @rating = Rating.where(story_id: @story.id, user_id: @current_user.id).first
+      unless @rating
+        @rating = Rating.create(story_id: @story.id, user_id: @current_user.id, score: 0)
+      end
+    end
   end
-
 
 
   # GET /stories/new
@@ -65,16 +73,14 @@ class StoriesController < ApplicationController
   end
 
 
-
-
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_story
-      @story = Story.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_story
+    @story = Story.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def story_params
-      params.require(:story).permit(:name, :content)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def story_params
+    params.require(:story).permit(:name, :content)
+  end
 end

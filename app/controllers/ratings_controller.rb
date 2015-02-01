@@ -1,4 +1,5 @@
 class RatingsController < ApplicationController
+
   def update
     @rating = Rating.find(params[:id])
     @story = @rating.story
@@ -8,6 +9,5 @@ class RatingsController < ApplicationController
       end
     end
   end
-
 
 end

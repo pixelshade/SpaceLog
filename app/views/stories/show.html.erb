@@ -1,47 +1,58 @@
 <div class="container">
-<p id="notice"><%= notice %></p>
+  <p id="notice"><%= notice %></p>
 
 
   <h1><%= @story.name %></h1>
 
 
-<p>
-  <strong>Content:</strong>
-  <%= @story.content.html_safe %>
-</p>
-  <%  #@rating// %>
-<hr>
+  <p>
+    <strong>Content:</strong>
+    <%= @story.content.html_safe %>
+  </p>
+
+  <hr>
   <p>Averate rating</p>
+
   <div id="star"></div>
 
+
   <p>Your rating</p>
+
   <div id="user_star"></div>
 
 
-<script>
-    $('#star').raty({
-        readOnly: true,
-        score: <%= @story.average_rating %>,
-        path: '/assets'
-    });
-
-    $('#user_star').raty({
-        score: 3,
-        path: '/assets',
-        click: function(score, evt) {
-            $.ajax({
-                url: '/ratings/' + <%= 0 %>,
-                type: 'PATCH',
-                data: { score: score }
-            });
-        }
-    });
-</script>
+  <script>
+      $('#star').raty({
+          readOnly: true,
+          halfShow: true,
+          score: <%= @story.average_rating %>,
+          path: '/assets'
+      });
 
 
+      $('#user_star').raty({
+          readOnly: <%= @current_user.nil? %>,
+          score: <%= @rating.score %>,
+          path: '/assets',
+          click: function(score, evt) {
+              $.ajax({
+                  url: '/ratings/' + <%= @rating.id %>,
+                  type: 'PATCH',
+                  data: { score: score }
+              }).done(function (data){});
+          }
+      });
 
+  </script>
+  <% if (@current_user) %>
 
+  <% else %>
+      <small>
+        <span class="label label-warning">Warning</span>
+        You must be logged in to rate.
+      </small>
 
-<%= link_to 'Edit', edit_story_path(@story) %> |
-<%= link_to 'Back', stories_path %>
+  <% end %>
+  <%= link_to 'Edit', edit_story_path(@story) %> |
+  <%= link_to 'Back', stories_path %>
 </div>

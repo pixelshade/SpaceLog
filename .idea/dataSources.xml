@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="2338513892">
-    <data-source source="LOCAL" name="Rails SpaceLog: development" uuid="77277e63-7ada-4b52-a94f-9e7710b14d55">
+  <component name="DataSourceManagerImpl" format="xml" hash="1380388019">
+    <data-source source="LOCAL" name="Rails SpaceLog: development" uuid="e8732613-21ab-444f-ac23-5d66869befae">
       <driver-ref>sqlite.xerial</driver-ref>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
       <jdbc-url>jdbc:sqlite:D:\Projects\Shared Projects\Web\SpaceLog\db\development.sqlite3</jdbc-url>
       <libraries />
     </data-source>
-    <data-source source="LOCAL" name="Rails SpaceLog: development" uuid="e8732613-21ab-444f-ac23-5d66869befae">
+    <data-source source="LOCAL" name="DigitalOcean SpaceLog" uuid="232099a3-f935-4c5c-b9cc-37388ef199e7">
       <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:D:\Projects\Shared Projects\Web\SpaceLog\db\development.sqlite3</jdbc-url>
+      <jdbc-url>jdbc:sqlite:95.85.23.171:3131</jdbc-url>
       <libraries />
     </data-source>
   </component>

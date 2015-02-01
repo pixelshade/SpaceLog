@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20150201104213) do
   create_table "galaxies", force: true do |t|
     t.string   "name"
     t.text     "info"
-    t.integer  "size"
+    t.float    "size"
     t.integer  "rotX"
     t.integer  "rotY"
     t.integer  "rotZ"
@@ -57,22 +57,20 @@ ActiveRecord::Schema.define(version: 20150201104213) do
     t.integer  "planetary_system_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "texture_file_name"
-    t.string   "texture_content_type"
-    t.integer  "texture_file_size"
-    t.datetime "texture_updated_at"
   end
 
   add_index "planets", ["planetary_system_id"], name: "index_planets_on_planetary_system_id"
 
   create_table "ratings", force: true do |t|
     t.integer  "story_id"
+    t.integer  "user_id"
     t.integer  "score",      default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "ratings", ["story_id"], name: "index_ratings_on_story_id"
+  add_index "ratings", ["user_id"], name: "index_ratings_on_user_id"
 
   create_table "stories", force: true do |t|
     t.string   "name"

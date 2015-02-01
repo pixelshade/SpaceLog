@@ -1,4 +1,7 @@
 class User < ActiveRecord::Base
+  has_many :ratings
+  has_many :stories
+
   def self.omniauth(auth)
     # auth.permit(:provider, :uid)
     where(auth.slice(:provider, :uid).permit(:provider, :uid)).first_or_initialize.tap do |user|
