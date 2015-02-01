@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141204003237) do
+ActiveRecord::Schema.define(version: 20150201104213) do
 
   create_table "galaxies", force: true do |t|
     t.string   "name"
@@ -77,6 +77,17 @@ ActiveRecord::Schema.define(version: 20141204003237) do
   create_table "stories", force: true do |t|
     t.string   "name"
     t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", force: true do |t|
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "name"
+    t.string   "image"
+    t.string   "token"
+    t.datetime "expires_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -19,7 +19,7 @@ gem 'paperclip', '~> 4.2'
 gem 'tinymce-rails'
 
 # fb authentication
-# gem 'omniauth-facebook', '~> 2.0.0'
+gem 'omniauth-facebook'
 
 # gem 'devise'
 

@@ -36,6 +36,9 @@ Rails.application.configure do
   # config.action_view.raise_on_missing_translations = true
   Paperclip.options[:command_path] = "C:/Program Files/ImageMagick"
 
+  ENV['FACEBOOK_KEY'] = "869119639794549";
+  ENV['FACEBOOK_SECRET'] = "aa1543a16c08938b299d43b15b04dd2a";
+
 end
 
 

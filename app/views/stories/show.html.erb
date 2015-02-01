@@ -1,0 +1,47 @@
+<div class="container">
+<p id="notice"><%= notice %></p>
+
+
+  <h1><%= @story.name %></h1>
+
+
+<p>
+  <strong>Content:</strong>
+  <%= @story.content.html_safe %>
+</p>
+  <%  #@rating// %>
+<hr>
+  <p>Averate rating</p>
+  <div id="star"></div>
+
+  <p>Your rating</p>
+  <div id="user_star"></div>
+
+
+<script>
+    $('#star').raty({
+        readOnly: true,
+        score: <%= @story.average_rating %>,
+        path: '/assets'
+    });
+
+    $('#user_star').raty({
+        score: 3,
+        path: '/assets',
+        click: function(score, evt) {
+            $.ajax({
+                url: '/ratings/' + <%= 0 %>,
+                type: 'PATCH',
+                data: { score: score }
+            });
+        }
+    });
+</script>
+
+
+
+
+
+<%= link_to 'Edit', edit_story_path(@story) %> |
+<%= link_to 'Back', stories_path %>
+</div>
