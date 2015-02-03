@@ -11,6 +11,7 @@ class CreatePlanets < ActiveRecord::Migration
       t.integer :posY
       t.integer :posZ
       t.belongs_to :planetary_system, index: true
+
       t.timestamps
     end
   end
